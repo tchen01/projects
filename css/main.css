@@ -1,0 +1,317 @@
+@charset "utf-8";
+
+/*@import url('../font/brandon/stylesheet.css'); */
+/* SEPERATE ESSENTIAL FROM NONESSENTIAL */
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+
+	font-family: brandon_grotesque;
+	font-weight: 800;
+	text-align: center;
+	background: rgb(65,110,165);
+	color: rgb(220,235,255);
+
+	cursor: default;	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+h1, h2, h3, h4, p{
+	margin: 0;
+	display: inline-block;
+	width: 80%;
+}
+
+h1{
+	font-size: 10vw;
+	line-height: 9vw;
+	width: 100%;
+  font-weight: inherit;
+}
+
+h2{
+	font-size: 4vw;
+	line-height: 4vw;
+
+	font-weight: 300;
+}
+
+h3{
+	font-size: 300%;
+	font-weight: 400;
+}
+p{
+	font-size: 140%;
+	font-weight: 300;
+}
+
+.italic{
+	font-style: italic;
+}
+
+.right{
+	text-align: right;
+	float: right;
+}
+
+.left{
+	text-align: left;
+	float: left;
+}
+
+.justify{
+	text-align: justify
+}
+
+
+/* HOME PAGE SPECIAL STYLING*/
+#a>div{
+	display: table;
+	padding: 0;
+	height: 1%;
+	width: 100%;
+	text-align: center;
+}
+
+#title{
+	display: table-cell; 
+	vertical-align: middle; 
+	font-size: 12vw;
+	font-weight: 800;
+}
+
+#intro{
+	position: relative;
+	top: 1em;
+	left: 41%;
+	font-size: 2vw;
+	font-weight: 400;
+	font-style: italic;
+
+	width: 18%;
+	border: solid .1em rgb(220,235,255);
+}
+
+#intro:hover{
+	background: rgb(220,235,255);
+	color: rgb(65,110,165)
+}
+
+/* INSTRUCTION PAGE SPECIAL STYLING*/
+#a2{
+	background: black;
+}
+.instructions{
+	height: 50%;
+	width: 25%;
+    float: left;
+}
+
+#i1{background:red;}
+#i2{background:orange;}
+#i3{background:yellow;}
+#i4{background:green;}
+#i5{background:blue;}
+#i6{background:pink;}
+#i7{background:purple;}
+
+/***************************************************************************/
+/******************************    LAYOUT    *******************************/
+/***************************************************************************/
+.inner {
+    width: 10000%; /*there has got to be a better way to do this.*/
+	height: 100%;
+}
+
+.section{
+	float: left;
+    width: 1%; /* inner width * section width = 100%*/
+	height: 10000%;
+	position: relative;	/* why does this mess with the z-index of the fixed position*/
+}
+
+.subsec{
+    float: none;
+	height: 1%;
+	width: 100%;
+	background: inherit;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 50px;
+    box-sizing: border-box;
+}
+
+/* add more browsers*/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:#666; 
+}
+
+
+/* NAVIGATION STUFF */
+.indicator{
+	position: fixed;
+	z-index: 100;
+}
+
+#hind{
+	height: .3em;
+	background: rgb(50,55,70);
+	bottom: 0;
+}
+
+#hindholder{
+	height: 1.75em;
+	bottom: 0;
+	left: 0; 
+	text-align: center;
+	color: transparent;
+	
+	font-size: 150%;
+	font-weight: 800;
+	font-style: italic;
+}
+
+#hindholder:hover{
+	color: rgb(50,55,70);
+	background: rgb(220,235,255);
+}
+
+#hindholder>div{
+	display: inline-block;
+	height: 100%;
+	padding-top: .1em;
+}
+
+#hindholder>div:hover{
+	background: rgb(110,115,130);
+}
+
+#hindholder:hover ~ #vind, #hindholder:hover ~ #vindholder, #hindholder:hover ~ #share{ /* can this be simplified*/
+		display: none;
+}
+
+#vind{
+	width: 1.5em;
+	height: 1em;
+	background: rgb(220,235,255);
+	right: .5em;
+}
+
+#vindholder{
+	width: 1.5em;
+	padding: 4em .5em 1em 7em ;
+	right: 0em;
+	bottom: 0em;
+}
+
+#vindholder>div{
+	display: block;
+	width: 1.5em;
+	height: 1em;
+	
+	background: rgb(50,55,70);
+}
+/* should only be visible if an option?? also not on mobile (easy media query)??*/
+
+.nav{
+	font-size: 6em;
+	padding: 2em .1em 2em .1em;
+	line-height: 0;
+	
+	top: calc(50% - 2em);
+}
+
+.nav:hover {
+	background: rgb(50,55,70);
+}
+
+
+#left{
+	left: 0;
+	text-align: right;
+}
+
+#right{
+	right: 0;
+	text-align: left;
+}
+
+#share{
+	width: 2em;
+	height: 2em;
+	background: red;
+	position: fixed;
+	left: .5em;
+	bottom: 1em;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 560px) {  
+#title{
+	font-size: 23vw;
+	background: red;
+}
+
+#intro{
+	font-size: 4vw;
+	left: 32%;
+	width: 36%;
+
+}
+
+
+h1{
+	font-size: 25vw;
+	line-height: 20vw;
+}
+
+h2{
+	font-size: 6vw;
+	line-height: 5vw;
+
+	font-weight: 300;
+}
+
+h3{
+	font-size: 200%;
+	line-height: .9em;
+	font-weight: 400;
+}
+p{
+	font-size: 120%;
+	font-weight: 300;
+}
+
+/*should be larger screen than 700*/
+/*plsrespond:2responsive4u*/
+
+h1, h2, h3, h4, p{
+	width: 100%; /* is this actually desirable???? */
+}
+
+}
+
+@media (max-aspect-ratio: 3/2) {
+.instructions{height: 25%; width: 50%;}
+}

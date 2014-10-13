@@ -1,0 +1,36 @@
+/* images slow down rendering on mobile 
+SWITCH TO LOW RES WHILE ANIMATING?
+LOWER REST FOR MOBILE??? -> dont want pixilation, add blur effect or something.
+*/
+
+#b{
+	background: grey;
+	color: white;
+}
+#b1{
+  background: url(../img/b1.jpg) ;
+	background-size: cover;
+	background-position: center; 
+}
+#b2{
+  background: url(../img/b2.jpg) ;
+	background-size: cover;
+	background-position: center; 
+}
+#b2>p{
+  padding: 2%;
+  background: rgba(30,30,30,.4);
+}
+
+
+#e{
+  background: white;
+  color: black;
+  font-weight: 100; 
+}
+#e1{
+  background: url(../img/e1.png) ;
+	background-size: contain;
+  background-repeat: no-repeat;
+	background-position: center; 
+}
