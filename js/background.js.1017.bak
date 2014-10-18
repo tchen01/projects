@@ -176,11 +176,8 @@ doc.swipe({swipe:animate,
 );
 
 var dd = document.getElementById("dd")
-function animate(direction, action, time, delta, zoom, pos){
+function animate(direction, action, time, dx, dy, xinit, yinit){
   q = $( ".inner, .section, #hind, #vind" );
-  dx = delta[0].x;
-  dy = delta[0].y;
-
   dd.innerHTML = dx
   if( action == "move"){
 		switch( direction ){
