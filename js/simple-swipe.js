@@ -127,6 +127,8 @@
       // If it doesn't then a tap will never end the interaval...
       swipe_move(e, i);
       interval = setInterval(function() {
+      
+      // dt as array?
         dt = getms() - tinit;
         direction = dir(delta[0].x, delta[0].y);
         // console.log( touches, delta[0] )  

@@ -1,4 +1,4 @@
-/*TODO:
+  /*TODO:
 add share button stuff? 
 add comment stuff?
 
@@ -16,6 +16,27 @@ var maxh = $( ".section" ).length - 1; //sets max horizontal travel
 var	maxv = $( ".section" ).eq( x ).children( ".subsec" ).length - 1; //sets max vertical travel
 var hindpos = vindpos = 0;
 var hindwidth = $( window ).width() / (maxh + 1);
+var main_color = [ //indicator color
+  'rgb(220,235,255)', //0
+  'white', //1
+  'red', //2
+  'black', //3
+  'rgb(220,235,255)', //4
+  ]
+var accent_1 = [ //light accent
+  'rgb(65,110,165)', //0
+  'rgb(220,235,255)', //1
+  'green', //2
+  'LightGrey', //3
+  'rgb(220,235,255)', //4
+  ]
+var accent_2 = [ //indicator bg
+  'rgb(50,55,70)', //0
+  'grey', //1
+  'blue', //2
+  'LightGrey', //3
+  'rgb(220,235,255)', //4
+  ]
 
 //get hash and set initial position
 for (i = 0; i < maxh + 1; i++) {
@@ -29,19 +50,21 @@ for (i = 0; i < maxh + 1; i++) {
 }
 draw();
 hind();
+
 $( window ).resize(function(){
 	hind();
 });
 
-//change hind color depending on section color
+
 function hind(){
 	$( "#hindholder>div" ).remove();
 	hindwidth = $( window ).width() / (maxh + 1);
-	for (i = 0; i < maxh + 1; i++) { 
+	for (var i = 0; i < maxh + 1; i++) { 
 		$( "#hindholder" ).append("<div>" + $( ".section" ).eq( i ).attr('data') + "</div>");
 	}
 	$( "#hind, #hindholder>div" ).css({"width": hindwidth});
 }
+
 
 function vind(){
 	$( "#vindholder>div" ).remove();
@@ -101,7 +124,10 @@ function move( dir ) {
 	
 }
 
+  
 function draw(){
+
+  
 	mar = -x + "00%"; // switch x to string of percent
 	$( ".inner" ).animate({ "margin-left": mar }, speed);
 	
@@ -118,8 +144,10 @@ function draw(){
   setTimeout(function() {$( ".section" ).css( "visibility", "hidden" )
     .eq( x ).css( "visibility", "visible" );}, speed); //le fix this
   $( ".section" ).eq( x ).css( "visibility", "visible" );
-    
-  
+      
+  colorista([main_color[x]], {'#hind':['background'], '#vind':['background'], '#hindholder':['color'] });
+  colorista([accent_2[x]], {'#vindholder>div':['background'], '#hindholder':['background']});
+  colorista([accent_1[x]], {});
 }
 
 

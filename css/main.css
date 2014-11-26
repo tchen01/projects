@@ -175,26 +175,29 @@ p{
 
 #hind{
 	height: .3em;
-	background: rgb(50,55,70);
 	bottom: 0;
+}
+#hindcont{
+  height: 1.75em;
+  width: 100%;
+  bottom: 0;
+	left: 0; 
+}
+#hindcont:hover #hindholder{
+  height: 1.75em;
 }
 
 #hindholder{
-	height: 1.75em;
+	height: 0em;
 	bottom: 0;
 	left: 0; 
 	text-align: center;
-	color: transparent;
 	
 	font-size: 150%;
 	font-weight: 800;
 	font-style: italic;
 }
 
-#hindholder:hover{
-	color: rgb(50,55,70);
-	background: rgb(220,235,255);
-}
 
 #hindholder>div{
 	display: inline-block;
@@ -203,10 +206,10 @@ p{
 }
 
 #hindholder>div:hover{
-	background: rgb(110,115,130);
+	background: rgb(110,115,130); /* this still needs to be JSd */
 }
 
-#hindholder:hover ~ #vind, #hindholder:hover ~ #vindholder, #hindholder:hover ~ #share{ /* can this be simplified*/
+#hindcont:hover ~ #vind, #hindcont:hover ~ #vindholder, #hindcont:hover ~ #share{ /* can this be simplified*/
 		display: none;
 }
 
@@ -229,7 +232,7 @@ p{
 	width: 1.5em;
 	height: 1em;
 	
-	background: rgb(50,55,70);
+	background: red;
 }
 /* should only be visible if an option?? also not on mobile (easy media query)??*/
 
