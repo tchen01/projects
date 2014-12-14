@@ -1,13 +1,10 @@
   /*TODO:
-add share button stuff? 
-add comment stuff?
+Seperate into onload section and repeatedly called section
+add button for vertical movement, remove swipe ability for that
+-virtual buttons for horizonal???
 
-check compatibility 
-
-set nonvisible elements to display: none
-  -only x,y +/-1 visible?
-  -if horizontal scroll, hide y, if vertical, hide x??
-
+get touch detection plugin working properly
+  
 CLEAN UP CODE
 */
 var x = 0; 
@@ -38,7 +35,7 @@ var accent_2 = [ //indicator bg
   'rgb(220,235,255)', //4
   ]
 
-//get hash and set initial position
+//get url hash and set initial position
 for (i = 0; i < maxh + 1; i++) {
 	id = $( ".section" ).eq( i ).attr('data');
 	hash = window.location.hash.replace("#", "");
@@ -141,6 +138,9 @@ function draw(){
 	$( "#hind" ).animate({ "left": hindpos }, speed);
 	vind();
 
+  //hides sections that are out of range so that they are not rendered
+  //some weird functionality when you try to skip two pages quickly using keyboard
+  
   setTimeout(function() {$( ".section" ).css( "visibility", "hidden" )
     .eq( x ).css( "visibility", "visible" );}, speed); //le fix this
   $( ".section" ).eq( x ).css( "visibility", "visible" );
@@ -199,11 +199,15 @@ var delx = 0;
 
 var doc = new swipeArea( "body" );
 
-doc.swipe({swipe:animate,
+//temporarily disable until swipe plugin is ready
+/* doc.swipe({swipe:animate,
 	threshold: 100, refresh: 30, }
-);
+); */
 
 var dd = document.getElementById("dd")
+//up down animations are really weird. need to block horizontal for vertical swipe.
+//remove vertical move w/o keyboard??? -> but mobile
+//virtual buttons?
 function animate(direction, action, time, delta, zoom, pos){
   q = $( ".inner, .section, #hind, #vind" );
   dx = delta[0].x;

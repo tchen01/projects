@@ -13,7 +13,7 @@ html, body {
 	font-family: brandon_grotesque;
 	font-weight: 800;
 	text-align: center;
-	background: rgb(65,110,165);
+	background: rgb(65,110,165); /* move to style.css */
 	color: rgb(220,235,255);
 
 	cursor: default;	
@@ -98,7 +98,7 @@ p{
 	font-style: italic;
 
 	width: 18%;
-	border: solid .1em rgb(220,235,255);
+	border: solid .1em rgb(220,235,255); /* move to style.css */
 }
 
 #intro:hover{
@@ -203,6 +203,7 @@ p{
 	display: inline-block;
 	height: 100%;
 	padding-top: .1em;
+  overflow: hidden; /* find better solution */
 }
 
 #hindholder>div:hover{
@@ -216,7 +217,6 @@ p{
 #vind{
 	width: 1.5em;
 	height: 1em;
-	background: rgb(220,235,255);
 	right: .5em;
 }
 
@@ -235,19 +235,6 @@ p{
 	background: red;
 }
 /* should only be visible if an option?? also not on mobile (easy media query)??*/
-
-.nav{
-	font-size: 6em;
-	padding: 2em .1em 2em .1em;
-	line-height: 0;
-	
-	top: calc(50% - 2em);
-}
-
-.nav:hover {
-	background: rgb(50,55,70);
-}
-
 
 #left{
 	left: 0;

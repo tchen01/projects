@@ -34,3 +34,20 @@ LOWER REST FOR MOBILE??? -> dont want pixilation, add blur effect or something.
   background-repeat: no-repeat;
 	background-position: center; 
 }
+.art{
+	height: 50%;
+	width: 25%;
+  float: left;
+}
+#e2{
+  padding: 0;
+}
+#e21{background:red;}
+#e22{background:orange;}
+#e23{background:yellow;}
+#e24{background:green;}
+#e25{background:blue;}
+#e26{background:pink;}
+#e27{background:purple;}
+
+
