@@ -231,8 +231,6 @@ p{
 	display: block;
 	width: 1.5em;
 	height: 1em;
-	
-	background: red;
 }
 /* should only be visible if an option?? also not on mobile (easy media query)??*/
 
@@ -255,9 +253,19 @@ p{
 	bottom: 1em;
 }
 
+
+
+
 /* MEDIA QUERIES */
 
-@media (max-width: 560px) {  
+@media (max-width: 560px) {
+
+#vindholder{
+	padding: 4em .5em 1em 2em ;
+	bottom: 2em;
+  background: green;
+}
+
 #title{
 	font-size: 23vw;
 	background: red;
@@ -304,4 +312,5 @@ h1, h2, h3, h4, p{
 
 @media (max-aspect-ratio: 3/2) {
 .instructions{height: 25%; width: 50%;}
+
 }

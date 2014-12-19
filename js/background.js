@@ -64,10 +64,13 @@ function hind(){
 
 
 function vind(){
+  //maybe not needed to run every time
+  //have a resize detect function to reset all the height/withd stuff??
+  var vindbottom = parseFloat($( '#vindholder' ).css( 'bottom' )) / parseFloat($( '#vindholder' ).css("font-size")) + 1;
 	$( "#vindholder>div" ).remove();
 	maxv = $( ".section" ).eq( x ).children( ".subsec" ).length - 1; //why do i has to do this??
 
-	vindpos = maxv + 1 + y + "em";
+	vindpos = maxv + vindbottom + y + "em";
 	$( "#vind" ).css({ "bottom": vindpos }, speed);
 	for (i = 0; i < maxv + 1; i++) { 
     $( "#vindholder" ).append("<div></div>");
@@ -139,11 +142,11 @@ function draw(){
 	vind();
 
   //hides sections that are out of range so that they are not rendered
-  //some weird functionality when you try to skip two pages quickly using keyboard
+  //touch seems to lag with this but keyboard looks better with it
   
-  setTimeout(function() {$( ".section" ).css( "visibility", "hidden" )
-    .eq( x ).css( "visibility", "visible" );}, speed); //le fix this
-  $( ".section" ).eq( x ).css( "visibility", "visible" );
+  //setTimeout(function() {$( ".section" ).css( "visibility", "hidden" )
+  //  .eq( x ).css( "visibility", "visible" );}, speed); //le fix this
+  //$( ".section" ).eq( x ).css( "visibility", "visible" );
       
   colorista([main_color[x]], {'#hind':['background'], '#vind':['background'], '#hindholder':['color'] });
   colorista([accent_2[x]], {'#vindholder>div':['background'], '#hindholder':['background']});

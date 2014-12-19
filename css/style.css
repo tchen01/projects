@@ -50,4 +50,7 @@ LOWER REST FOR MOBILE??? -> dont want pixilation, add blur effect or something.
 #e26{background:pink;}
 #e27{background:purple;}
 
+@media (max-aspect-ratio: 3/2) {
+.art{height: 25%; width: 50%;}
+}
 
